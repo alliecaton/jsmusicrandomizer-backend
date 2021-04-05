@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bandcamp-scraper": "^1.4.1",
+    "soundcloud": "^3.3.2"
+  }
+}
