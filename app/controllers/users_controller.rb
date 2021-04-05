@@ -15,13 +15,14 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params))
+    @user = User.new(user_params)
 
-    if User.find_by(@user.name) != nil
-      @user.save
+    @new_user = User.find_or_create_by(name: @user.name)
+      if @new_user.save
       render json: @user, status: :created, location: @user
-    # else
-    #   render json: @user.errors, status: :unprocessable_entity
+    else
+      @user
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
