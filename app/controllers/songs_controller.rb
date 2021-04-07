@@ -10,7 +10,8 @@ class SongsController < ApplicationController
 
   # GET /songs/1
   def show
-    render json: @song
+    song = Song.find_by(id: params[:id])
+    render json: song, include: [:user]
   end
 
   # POST /songs
