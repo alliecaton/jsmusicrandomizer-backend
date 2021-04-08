@@ -39,7 +39,7 @@ module MusicRandomizerApp
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
+        origins 'https://aqueous-beyond-33951.herokuapp.com'
         resource '*',
           :headers => :any,
           :methods => [:get, :post, :delete, :put, :patch, :options, :head],
