@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    user = User.find_by(id: params[:id])
+    user = User.find_by(name: params[:name])
     render json: user, include: [:songs]
   end
 
